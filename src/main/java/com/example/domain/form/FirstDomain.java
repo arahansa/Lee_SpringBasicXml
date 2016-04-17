@@ -17,7 +17,6 @@ import lombok.NoArgsConstructor;
 public class FirstDomain {
 	
 	// public, private, (default, protected)
-	
 	@NotBlank
 	@Size(max=3)
 	private String name;
