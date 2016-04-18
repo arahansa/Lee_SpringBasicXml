@@ -22,5 +22,20 @@
 		</property>
 	</bean>
 	
+	
+	<context:property-placeholder location="classpath:application.properties"/> 
+	<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	  <property name="locations">
+	    <list>
+	      <value>classpath:application.properties</value>
+	    </list>
+	  </property>
+	  <property name="ignoreUnresolvablePlaceholders" value="false"/>
+	</bean> -->
+	
+	<bean class="com.example.controller.properties.TestPropertyBean">
+		<property name="name" value="${test.msg}"/>
+	</bean>
+	
 
 </beans>

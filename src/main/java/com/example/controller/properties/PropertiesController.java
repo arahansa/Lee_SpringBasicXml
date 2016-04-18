@@ -1,23 +1,32 @@
 package com.example.controller.properties;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sun.xml.internal.ws.api.pipe.Engine;
+import junit.framework.Test;
 
 @Controller
 public class PropertiesController {
+	// http://www.baeldung.com/2012/02/06/properties-with-spring/ 가 정확함
+	// Properties Xml 은  env 로 못 불러오는 건가..? 
+	// 부모/자식 콘테이너의 여부에 따라서 또 @Value 를 쓰기도 못쓰기도 한다.
 	
 	@Autowired
-	private Environment env;
+	private Environment env; // env 는 XML 설정에서 잘 되지가 않는다.
+	
+	@Autowired TestPropertyBean testPropertyBean;
+	
+	@Value( "${test.msg}" )
+	private String jdbcUrl;
 	
 	@RequestMapping("/test/properties")
 	@ResponseBody
 	public String propertiesTest(){
-		return "hello~ " + env.getProperty("test.msg");
+		return "hello~ : "+jdbcUrl + " \n , 테스트 프로퍼티 빈 정보 : " +  testPropertyBean;
 	}
 
 }
