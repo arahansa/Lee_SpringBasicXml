@@ -25,22 +25,16 @@
 	
 	
 	
-	<!-- 프로퍼티 관련 설정 정보 :: PropertiesController 참조할 것 -->
-	<context:property-placeholder location="classpath:application.properties"/> 
-	
-	<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-	  <property name="locations">
-	    <list>
-	      <value>classpath:application.properties</value>
-	    </list>
-	  </property>
-	  <property name="ignoreUnresolvablePlaceholders" value="false"/>
-	</bean> -->
+	<!-- 
+	어노테이클래스 임포트: 
+	http://stackoverflow.com/questions/13254779/how-to-import-java-config-class-into-xml-config-so-that-both-contexts-have-beans
+	 -->
+	<bean class="com.example.config.PropertiesWithJavaConfig"/>
 	
 	<bean class="com.example.controller.properties.TestPropertyBean">
 		<property name="name" value="${test.msg}"/>
 	</bean>
-	<!-- // 프로퍼티 관련 설정 정보 :: PropertiesController 참조할 것 -->	
+	
 	
 
 </beans>
