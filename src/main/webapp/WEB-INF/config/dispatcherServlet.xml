@@ -24,8 +24,10 @@
 	
 	
 	
+	
 	<!-- 프로퍼티 관련 설정 정보 :: PropertiesController 참조할 것 -->
 	<context:property-placeholder location="classpath:application.properties"/> 
+	
 	<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 	  <property name="locations">
 	    <list>
@@ -34,10 +36,11 @@
 	  </property>
 	  <property name="ignoreUnresolvablePlaceholders" value="false"/>
 	</bean> -->
+	
 	<bean class="com.example.controller.properties.TestPropertyBean">
 		<property name="name" value="${test.msg}"/>
 	</bean>
-	<!-- // 프로퍼티 관련 설정 정보 :: PropertiesController 참조할 것 -->
+	<!-- // 프로퍼티 관련 설정 정보 :: PropertiesController 참조할 것 -->	
 	
 
 </beans>

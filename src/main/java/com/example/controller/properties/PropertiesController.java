@@ -18,15 +18,16 @@ public class PropertiesController {
 	@Autowired
 	private Environment env; // env 는 XML 설정에서 잘 되지가 않는다.
 	
-	@Autowired TestPropertyBean testPropertyBean;
+	@Autowired 
+	private TestPropertyBean testPropertyBean;
 	
 	@Value( "${test.msg}" )
 	private String jdbcUrl;
 	
-	@RequestMapping("/test/properties")
+	@RequestMapping(value="/test/properties", produces="text/html;charset=UTF-8")
 	@ResponseBody
 	public String propertiesTest(){
-		return "hello~ : "+jdbcUrl + " \n , 테스트 프로퍼티 빈 정보 : " +  testPropertyBean;
+		return "hello~ : "+jdbcUrl + " <br> , 테스트 프로퍼티 빈 정보 : " +  testPropertyBean;
 	}
 
 }
