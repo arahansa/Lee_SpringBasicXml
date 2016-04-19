@@ -39,6 +39,7 @@ public class ValidationController {
 	
 	
 	// 스프링 FORM 태그 사용
+	// 최범균님 책 331페이지에 코드 규약이 나옴
 	@RequestMapping(value = "/test/validation/form2", method=RequestMethod.GET)
 	public String testForm2(@ModelAttribute FirstDomain firstDomain) {
 		return "form/validation/form2";
