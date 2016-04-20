@@ -37,11 +37,18 @@ dependencies {
    
     // spring
     compile("org.springframework:spring-webmvc:${versions.spring}")
+    compile("org.springframework:spring-jdbc:${versions.spring}")
     
 
     // db
     compile("com.zaxxer:HikariCP:${versions.hikariCP}")
     compile("com.h2database:h2:${versions.h2}")
+    compile 'mysql:mysql-connector-java:6.0.2'
+
+    // db framework
+    compile 'org.mybatis:mybatis-spring:1.3.0'
+    compile 'org.mybatis:mybatis:3.4.0'
+    
     
     // logging
     compile 'org.slf4j:slf4j-api:1.7.12'
@@ -58,15 +65,12 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-
-
 //초기 경로 디렉터리 생성
 task initSrc {
     project.sourceSets*.allSource.srcDirTrees.flatten().dir.each { dir ->
         dir.mkdirs()
     }
 }
-
 
 eclipse {
   classpath {

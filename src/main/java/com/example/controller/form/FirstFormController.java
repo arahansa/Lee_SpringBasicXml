@@ -23,6 +23,7 @@ public class FirstFormController {
 	// name, age 
 	@RequestMapping(value="/save" , method=RequestMethod.POST)
 	public String test2(@ModelAttribute FirstDomain firstDomain){
+		log.debug("test ?");
 		log.info("first Domain : {} ", firstDomain );
 		return "test/saveResult";
 	}
