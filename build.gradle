@@ -29,6 +29,9 @@ repositories {
     mavenCentral()
 }
 
+apply from :'./gradle/profile.gradle'
+
+
 dependencies {
 
     // jspPage
@@ -99,3 +102,4 @@ tasks.idea.dependsOn initSrc
 /* Eclipse 관련 설정들 */
 tasks.eclipse.dependsOn cleanEclipse
 tasks.eclipse.dependsOn initSrc
+

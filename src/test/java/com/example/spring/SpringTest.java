@@ -9,7 +9,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class SpringTest {
 
-	@Test
+	// @Test
 	public void springTest() throws Exception {
 		
 		final ConfigurableApplicationContext bf = new GenericXmlApplicationContext("");
